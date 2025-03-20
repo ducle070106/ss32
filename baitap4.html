@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>session32</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="email" id="email" />
+    <p id="commen"></p>
+    <button id="check">check</button>
+    <script>
+      let email = document.querySelector("#email");
+      let commen = document.querySelector("#commen");
+      let check = document.querySelector("#check");
+      check.addEventListener("click", function () {
+        if (
+          email.value.includes("@") &&
+          (email.value.endsWith(".com") || email.value.endsWith(".vn"))
+        ) {
+          commen.textContent = "email hợp lệ!";
+          commen.style.color = "green";
+        } else {
+          commen.textContent = "email không hợp lệ!";
+          commen.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

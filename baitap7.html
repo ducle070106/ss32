@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>session32</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      button {
+        border: none;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+      img {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <img
+        id="img1"
+        src="https://baoxaydung.com.vn/stores/news_dataimages/vananh/022016/16/15/150752baoxaydung_image001.jpg"
+        alt="dodo hay thỏ"
+        style="position: relative; z-index: 2"
+      />
+      <img
+        id="img2"
+        src="https://static.wikia.nocookie.net/black-souls/images/a/af/Bill_Surprise.png"
+        alt="rắn(nam)"
+        style="position: relative; z-index: 2"
+      />
+    </div>
+    <div
+      id="background"
+      style="
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
+        opacity: 0.5;
+        position: fixed;
+        z-index: 1;
+      "
+    ></div>
+    <script>
+      let background = document.querySelector("#background");
+      let img1 = document.querySelector("#img1");
+      let img2 = document.querySelector("#img2");
+      img1.addEventListener("click", function () {
+        background.style.display = "block";
+        img2.style.display = "none";
+        img1.style.height = "500px";
+        img1.style.cursor = "none";
+        background.style.cursor = "pointer";
+      });
+      img2.addEventListener("click", function () {
+        background.style.display = "block";
+        img1.style.display = "none";
+        img2.style.height = "500px";
+        img1.style.cursor = "none";
+        background.style.cursor = "pointer";
+      });
+      background.addEventListener("click", function () {
+        location.reload();
+      });
+    </script>
+  </body>
+</html>

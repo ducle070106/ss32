@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>session32</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      button {
+        border: none;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text" style="font-size: 24px">
+      Chữ sẽ thay đổi kích thước khi bấm nút
+    </p>
+    <button id="big" style="background-color: green">+</button>
+    <button id="small" style="background-color: red">-</button>
+    <script>
+      let size = 1;
+      let text = document.querySelector("#text");
+      let big = document.querySelector("#big");
+      let small = document.querySelector("#small");
+      big.addEventListener("click", function () {
+        size += size * 0.1;
+        sizeAll();
+      });
+      small.addEventListener("click", function () {
+        size -= size * 0.1;
+        sizeAll();
+      });
+      function sizeAll() {
+        text.style.fontSize = `${size * 24}px`;
+        big.style.fontSize = `${size * 24}px`;
+        small.style.fontSize = `${size * 24}px`;
+        big.style.width = `${size * 50}px`;
+        big.style.height = `${size * 50}px`;
+        small.style.width = `${size * 50}px`;
+        small.style.height = `${size * 50}px`;
+      }
+    </script>
+  </body>
+</html>

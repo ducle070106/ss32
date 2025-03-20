@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>session32</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="add" type="text" placeholder="Nhập tên môn học" />
+    <button id="submit">Thêm</button>
+    <ul id="list"></ul>
+    <script>
+      let subjects = [{ name: "Toán" }, { name: "Văn" }, { name: "Anh" }];
+      let list = document.querySelector("#list");
+      function renderData() {
+        const htmls = subjects.map((subject, index) => {
+          return `
+            <li style="margin-left:50px">${index + 1}. ${subject.name}</li>
+        `;
+        });
+        const convertArrayToString = htmls.join("");
+        list.innerHTML = convertArrayToString;
+      }
+      renderData();
+      let submit = document.querySelector("#submit");
+      let add = document.querySelector("#add");
+      submit.addEventListener("click", function () {
+        if (add.value) {
+          addSubject();
+        } else {
+          alert("tên môn học không được để trống!");
+        }
+      });
+      function addSubject() {
+        subjects.push({ name: add.value });
+        renderData();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>session32</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="click">Bấm vào tôi</button>
+    <p>Số lần bấm: <span id="time">0</span></p>
+    <script>
+      let num = 0;
+      let time = document.querySelector("#time");
+      let click = document.querySelector("#click");
+      click.addEventListener("click", function () {
+        num++;
+        time.innerHTML = num;
+      });
+    </script>
+  </body>
+</html>
